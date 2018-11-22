@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.tsx'
   },
   output: {
     filename: '[name].bundle.js',
@@ -13,11 +13,18 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+      {
+        test: /\.tsx?$/,
+        use: ['ts-loader'],
+        exclude: /node_modules/
+      }
     ]
   },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({ // html 模板插件，不指定模板会自动创建模板
       template: 'src/index.html',
     })
   ],
