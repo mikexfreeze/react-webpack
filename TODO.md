@@ -1,4 +1,5 @@
 # TODO List
 
 - [x] TreeShaking
-- index template
+- [x] index template
+- TypeScript

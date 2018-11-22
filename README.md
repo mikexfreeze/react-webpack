@@ -5,4 +5,4 @@
 ## 功能点
 
 1. TreeShaking
-2.  
+2. index template 
