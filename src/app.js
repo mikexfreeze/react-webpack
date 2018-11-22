@@ -1,16 +1,18 @@
 /* create by Micheal Xiao 2018/11/22 15:20 */
-import React from 'react'
-import ReactDOM from 'react-dom';
-import tsTest from './test-ts'
+import dva from 'dva';
+// import './index.css';
 
-class HelloMessage extends React.Component {
-  render() {
-    let ts = new tsTest("t")
-    return <div>Hello {this.props.name}</div>;
-  }
-}
+// 1. Initialize
+const app = dva();
 
-ReactDOM.render(
-  <HelloMessage name="Mike" />,
-  document.getElementById('app')
-);
+// 2. Plugins
+// app.use({});
+
+// 3. Model
+// app.model(require('./models/example').default);
+
+// 4. Router
+app.router(require('./router').default);
+
+// 5. Start
+app.start('#app');
