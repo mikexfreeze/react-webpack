@@ -2,4 +2,6 @@
 
 - [x] TreeShaking
 - [x] index template
-- TypeScript
+- [x] TypeScript
+- [x] Code Splitting(代码分割)
+- 动态导入

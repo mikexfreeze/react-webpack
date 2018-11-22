@@ -6,3 +6,5 @@
 
 1. TreeShaking
 2. index template 
+3. TypeScript
+4. 代码分割

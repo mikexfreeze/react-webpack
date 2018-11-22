@@ -9,6 +9,7 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -23,6 +24,11 @@ module.exports = {
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
+  },
+  optimization: {
+    splitChunks: { // 代码模块拆分
+      chunks: 'all',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({ // html 模板插件，不指定模板会自动创建模板
