@@ -14,7 +14,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
+      {test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader', 'eslint-loader']},
       {
         test: /\.tsx?$/,
         use: ['ts-loader'],
@@ -45,7 +45,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      assets: path.resolve(__dirname, 'src/assets/'),
+    }
   },
   optimization: {
     splitChunks: { // 代码模块拆分
