@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/app.js'
+    app: './src/index.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -14,7 +14,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader', 'eslint-loader']},
+      {test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader']},
       {
         test: /\.tsx?$/,
         use: ['ts-loader'],
@@ -47,7 +47,14 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      assets: path.resolve(__dirname, 'src/assets/'),
+      components: path.resolve(__dirname, 'src/components/'),
+      utils: path.resolve(__dirname, 'src/utils/'),
+      index: path.resolve(__dirname, 'src/index'),
+      fetch: path.resolve(__dirname, 'src/utils/fetch'),
+      assets: path.resolve(__dirname, 'src/assets'),
+      acom: path.resolve(__dirname, 'src/acom'),
+      services: path.resolve(__dirname, 'src/services'),
+      routes: path.resolve(__dirname, 'src/routes'),
     }
   },
   optimization: {

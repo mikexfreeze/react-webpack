@@ -1,0 +1,9 @@
+const ChinaPhone = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
+const ID =  /^[a-zA-Z0-9_]{1,128}$/g
+
+const pattern = {
+  ChinaPhone,
+  ID,
+}
+
+export default pattern

@@ -1,18 +1,29 @@
 /* create by Micheal Xiao 2018/11/22 15:20 */
-import dva from 'dva';
-// import './index.css';
+import React from 'react'
+// import LocaleAP from "./acom/locale-provider";
+// import {addLocaleData, IntlProvider} from "react-intl";
+import { connect } from 'dva'
+import {Route, Switch, routerRedux} from "dva/router";
+import {getRouter} from "./common/router";
+import {login} from "./common/routerConfig";
 
-// 1. Initialize
-const app = dva();
+import 'moment/locale/zh-cn';
+// import walden from 'assets/json/walden';
+// import echarts from 'echarts';
 
-// 2. Plugins
-// app.use({});
+const { ConnectedRouter } = routerRedux;
 
-// 3. Model
-// app.model(require('./models/example').default);
+@connect(({global}) => ({
+  lang: global.lang,
+}))
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-// 4. Router
-app.router(require('./router').default);
+  render () {
+    const Login = getRouter(this.props.app, login).component;
 
-// 5. Start
-app.start('#app');
+    return ("test")
+  }
+}

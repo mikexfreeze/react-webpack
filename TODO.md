@@ -6,6 +6,6 @@
 - [x] Code Splitting(代码分割)
 - [x] CSS module
 - [x] alias
-- ESLint
+- [x] ESLint
 - 动态导入
 - ESlint
