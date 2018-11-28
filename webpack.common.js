@@ -32,7 +32,8 @@ module.exports = {
               localIdentName: "[local]___[hash:base64:5]"
             }
           }, {
-            loader: "less-loader"
+            loader: "less-loader",
+            options: { javascriptEnabled: true }
           }
         ]
       }, {

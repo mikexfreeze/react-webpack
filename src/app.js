@@ -24,6 +24,12 @@ export default class App extends React.Component {
   render () {
     const Login = getRouter(this.props.app, login).component;
 
-    return ("test")
+    return (
+      <ConnectedRouter history={this.props.history}>
+        <Switch>
+          <Route path="/login" exact component={Login} />
+        </Switch>
+      </ConnectedRouter>
+    )
   }
 }

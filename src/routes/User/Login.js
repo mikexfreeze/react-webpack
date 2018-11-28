@@ -1,7 +1,7 @@
 import {Form, Icon, Input, Button, Checkbox, Row} from 'antd';
 import {connect} from 'dva';
 import React from 'react'
-// import styles from './Login.less';
+import styles from './Login.less';
 
 const FormItem = Form.Item;
 
