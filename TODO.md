@@ -7,5 +7,6 @@
 - [x] CSS module
 - [x] alias
 - [x] ESLint
+- [x] public 文件夹处理
 - 动态导入
 - ESlint

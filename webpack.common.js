@@ -2,6 +2,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -66,7 +67,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ // html 模板插件，不指定模板会自动创建模板
       template: 'src/index.html',
-    })
+    }),
+    new CopyWebpackPlugin([ // copy public 文件夹至 dist
+      { from: 'src/public', to: '' }
+    ]),
   ],
 
 };

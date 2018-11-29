@@ -19,7 +19,6 @@ class NormalLoginForm extends React.Component {
     }
   }
 
-
   handleSubmit = (e) => {
     const {dispatch} = this.props;
 
