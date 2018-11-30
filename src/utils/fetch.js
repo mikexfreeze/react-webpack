@@ -2,7 +2,7 @@ import axios from 'axios';
 import {message} from 'antd';
 import {routerRedux} from 'dva/router';
 import store from 'index';
-import debounce from 'lodash/debounce'
+import {debounce} from 'lodash'
 import { IntlProvider, defineMessages } from 'react-intl';
 
 let intl; let lastLang = 'zh-CN'

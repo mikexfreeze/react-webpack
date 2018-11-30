@@ -7,7 +7,7 @@ import {Route, Switch, routerRedux} from "dva/router";
 import {getRouter} from "./common/router";
 import {login} from "./common/routerConfig";
 
-import 'moment/locale/zh-cn';
+// import 'moment/locale/zh-cn';
 // import walden from 'assets/json/walden';
 // import echarts from 'echarts';
 

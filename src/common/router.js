@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 import { Spin } from 'antd';
 import Loadable from 'react-loadable';
-import cloneDeep from "lodash/cloneDeep";
+import {cloneDeep} from "lodash";
 import basicRoute from "./routerConfig";
 
 const modelNotExisted = (app, model) =>
