@@ -1,4 +1,4 @@
-import {Form, Icon, Input, Button, Checkbox, Row} from 'antd';
+import {Form, Input, Button, Checkbox, Row} from 'antd';
 import {connect} from 'dva';
 import React from 'react'
 import styles from './Login.less';
@@ -61,14 +61,14 @@ class NormalLoginForm extends React.Component {
             {getFieldDecorator('userName', {
               rules: [{required: true, message: 'Please input your username!'}],
             })(
-              <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Username"/>
+              <Input placeholder="Username"/>
             )}
           </FormItem>
           <FormItem>
             {getFieldDecorator('password', {
               rules: [{required: true, message: 'Please input your Password!'}],
             })(
-              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
+              <Input type="password"
                      placeholder="Password"/>
             )}
           </FormItem>
@@ -84,7 +84,6 @@ class NormalLoginForm extends React.Component {
             <div className={styles.verifCon} style={{backgroundImage: `url(${this.state.varifCodehttp})`}}>
 
             </div>
-            <Icon type="reload" className={styles.reload} onClick={this.generateVerifCode} />
           </Row>
 
           <FormItem>
