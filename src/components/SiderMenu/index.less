@@ -1,0 +1,121 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../acom/theme/theme.less';
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+
+.logo {
+  height: @header-height;
+  position: relative;
+  line-height: @header-height;
+  padding-left: 34px;
+  transition: all 0.3s;
+  background: white;
+  overflow: hidden;
+  border-bottom: 1px solid #e8e8e8;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+  }
+  h1 {
+    display: inline-block;
+    vertical-align: sub;
+    font-size: 20px;
+    margin: 0 0 0 12px;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  }
+}
+
+.logoColl{
+  padding-left: (@menu-collapsed-width - 30px) / 2;
+}
+
+.logoIcon{
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logoText{
+  font-size: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+}
+
+:global{
+  .ant-layout-sider-collapsed{
+    .logo {
+      height: 64px;
+      position: relative;
+      line-height: 64px;
+      padding-left: (@menu-collapsed-width - 32px) / 2;
+      transition: all 0.3s;
+      background: #002140;
+      overflow: hidden;
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 32px;
+      }
+      h1 {
+        color: white;
+        display: inline-block;
+        vertical-align: sub;
+        font-size: 20px;
+        margin: 0 0 0 12px;
+        font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+
+
+.sider {
+  min-height: 100vh;
+  box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);
+  position: relative;
+  z-index: 10;
+  &.ligth {
+    background-color: white;
+    .logo {
+      background: white;
+      h1 {
+        color: #002140;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 14px;
+  margin-right: 10px;
+}
+
+:global {
+  .drawer .drawer-content {
+    background: #001529;
+  }
+  .ant-menu-inline-collapsed {
+    & > .ant-menu-item .sider-menu-item-img + span,
+    &
+      > .ant-menu-item-group
+      > .ant-menu-item-group-list
+      > .ant-menu-item
+      .sider-menu-item-img
+      + span,
+    & > .ant-menu-submenu > .ant-menu-submenu-title .sider-menu-item-img + span {
+      max-width: 0;
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+  .ant-menu-item .sider-menu-item-img + span,
+  .ant-menu-submenu-title .sider-menu-item-img + span {
+    transition: opacity 0.3s @ease-in-out, width 0.3s @ease-in-out;
+    opacity: 1;
+  }
+}

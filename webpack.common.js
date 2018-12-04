@@ -35,16 +35,34 @@ module.exports = {
             }
           }, {
             loader: "less-loader",
-            options: { javascriptEnabled: true }
+            options: {javascriptEnabled: true}
           }
         ]
       }, {
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader", options: {
+            sourceMap: true
+          }
+        }, {
+          loader: "sass-loader", options: {
+            sourceMap: true
+          }
+        }]
+      }, {
         test: /\.css$/,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
+          {loader: "style-loader"},
+          {loader: "css-loader"}
         ]
-      },
+      }, {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ]
   },
   resolve: {
@@ -70,7 +88,7 @@ module.exports = {
       template: 'src/index.html',
     }),
     new CopyWebpackPlugin([ // copy public 文件夹至 dist
-      { from: 'src/public', to: '' }
+      {from: 'src/public', to: ''}
     ]),
   ],
 

@@ -1,0 +1,45 @@
+@import '~antd/lib/style/themes/default.less';
+
+.tabs{
+  height: 100%;
+}
+
+.tabsContainer{
+  border-right: 1px solid #e8e8e8;
+
+  .tabTitle{
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .tab{
+    margin-left: 16px;
+    min-width: 120px;
+    justify-content: space-between;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+
+    &:hover{
+      cursor: pointer;
+      color: @primary-3;
+    }
+
+    &:global(.active){
+      color: @primary-color;
+    }
+    .title{
+      display: inline-block;
+    }
+
+    .icon{
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.content{
+  padding: 24px;
+}
+
+

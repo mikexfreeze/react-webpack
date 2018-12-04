@@ -47,7 +47,7 @@ export default class App extends React.Component {
   }
 
   render () {
-    // const BasicLayout = getRouter(this.props.app, layout).component;
+    const BasicLayout = getRouter(this.props.app, layout).component;
     const Login = getRouter(this.props.app, login).component;
 
     const appLocale = getLocale(this.props.lang);
@@ -66,6 +66,7 @@ export default class App extends React.Component {
             <ConnectedRouter history={this.props.history}>
               <Switch>
                 <Route path="/login" exact component={Login} />
+                <Route path="/" render={ (props) => <BasicLayout {...props} />} />
               </Switch>
             </ConnectedRouter>
           </IntlProvider>
