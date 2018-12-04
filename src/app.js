@@ -8,7 +8,7 @@ import {layout, login} from "./common/routerConfig";
 
 import { LocaleProvider } from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
-import 'moment/locale/zh-cn';
+// import 'moment/locale/zh-cn';
 // import walden from 'assets/json/walden';
 // import echarts from 'echarts';
 

@@ -3,6 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -90,6 +91,7 @@ module.exports = {
     new CopyWebpackPlugin([ // copy public 文件夹至 dist
       {from: 'src/public', to: ''}
     ]),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/), // 忽略moment.js中的locals文件，需要时单独引入
   ],
 
 };
