@@ -1,7 +1,7 @@
 // var path = require('path')
 
 module.exports = {
-  build: {
+  prod: {
     env: require('./prod.env'),
   },
   dev: {

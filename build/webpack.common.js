@@ -69,14 +69,14 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      components: path.resolve(__dirname, 'src/components/'),
-      utils: path.resolve(__dirname, 'src/utils/'),
-      index: path.resolve(__dirname, 'src/index'),
-      fetch: path.resolve(__dirname, 'src/utils/fetch'),
-      assets: path.resolve(__dirname, 'src/assets'),
-      acom: path.resolve(__dirname, 'src/acom'),
-      services: path.resolve(__dirname, 'src/services'),
-      routes: path.resolve(__dirname, 'src/routes'),
+      components: path.resolve(__dirname, '../src/components/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+      index: path.resolve(__dirname, '../src/index'),
+      fetch: path.resolve(__dirname, '../src/utils/fetch'),
+      assets: path.resolve(__dirname, '../src/assets'),
+      acom: path.resolve(__dirname, '../src/acom'),
+      services: path.resolve(__dirname, '../src/services'),
+      routes: path.resolve(__dirname, '../src/routes'),
     }
   },
   optimization: {
