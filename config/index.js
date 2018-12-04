@@ -1,4 +1,4 @@
-// var path = require('path')
+var path = require('path')
 
 module.exports = {
   prod: {
@@ -12,5 +12,6 @@ module.exports = {
     // assetsPublicPath: '/',
     // proxyTable: {},
     // cssSourceMap: false
-  }
+  },
+  dist: path.resolve(__dirname, '../dist')
 }

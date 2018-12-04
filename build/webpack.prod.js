@@ -5,6 +5,7 @@ const common = require('./webpack.common.js');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('../config')
+var path = require('path')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,7 +14,7 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(config.prod.env)
     }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], { root: path.resolve(__dirname, '../')}),
     new BundleAnalyzerPlugin(),
   ]
 });

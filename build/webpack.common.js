@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack')
+const config = require('../config')
 
 module.exports = {
   entry: {
@@ -12,7 +13,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
-    path: path.resolve(__dirname, 'dist')
+    path: config.dist
   },
   module: {
     rules: [
