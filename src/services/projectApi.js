@@ -53,6 +53,16 @@ export async function updateProject(data) {
   })
 }
 
+export async function queryProjectEvents(params) {
+  return fetch({
+    url: `/web/v1/projects/${params.projectToken}/events`,
+    method: 'get',
+    params: {
+      ...params
+    }
+  })
+}
+
 // 获取项目下告警统计
 export async function getProjectAlert(params) {
   return fetch({
@@ -66,5 +76,37 @@ export async function getProjectEndpointStatus(params) {
   return fetch({
     url: `/web/v1/projects/${params.tenantId}/${params.token}/endpointstatus`,
     method: 'get'
+  })
+}
+
+// 获取项目下区域列表
+export async function queryProjectZones(params) {
+  let projectToken = params.projectToken;
+  delete params.projectToken;
+
+  return fetch({
+    url: `/web/v1/projects/${projectToken}/zones`,
+    method: 'get',
+    params: {
+      ...params
+    }
+  })
+}
+
+export async function deleteProjectZone(token) {
+  return fetch({
+    url: `/web/v1/zones/${token}`,
+    method: 'delete'
+  })
+}
+
+// 创建区域
+export async function createZone(data) {
+  return fetch({
+    url: `/web/v1/projects/${data.projectToken}/zones`,
+    method: 'post',
+    data: {
+      ...data,
+    }
   })
 }

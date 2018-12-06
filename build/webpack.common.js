@@ -68,7 +68,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', 'json'],
     alias: {
       components: path.resolve(__dirname, '../src/components/'),
       utils: path.resolve(__dirname, '../src/utils/'),
@@ -87,6 +87,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ // html 模板插件，不指定模板会自动创建模板
+      chunksSortMode: 'none',
       template: 'src/index.html',
     }),
     new CopyWebpackPlugin([ // copy public 文件夹至 dist

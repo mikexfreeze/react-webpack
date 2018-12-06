@@ -3,7 +3,7 @@ export default {
     short: '中'
   },
   company: {
-    auth: '爱云信息技术（北京）有限公司'
+    auth: '爱云信息技术（上海）有限公司'
   },
   router: {
     dashboard:{name: '控制台'}

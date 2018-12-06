@@ -3,7 +3,7 @@ export default {
     short: 'EN'
   },
   company: {
-    auth: 'Acloud Info. Tech. (Beijing) Ltd. All Right Reserved.'
+    auth: 'Acloud Info. Tech. (ShangHai) Ltd. All Right Reserved.'
   },
   router: {
     dashboard:{name: 'Dashboard'}

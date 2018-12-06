@@ -3,12 +3,12 @@ import createLoading from 'dva-loading';
 import { browserHistory } from 'dva/router';
 
 // ag-grid css
-// import 'ag-grid-community/dist/styles/ag-grid.css';
-// import 'ag-grid-community/dist/styles/ag-theme-fresh.css';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-fresh.css';
 
-// import './acom/theme/index.less';
-// import './acom/theme/theme.less';
-// import 'assets/css/animate.css'
+import './acom/theme/index.less';
+import './acom/theme/theme.less';
+import 'assets/css/animate.css'
 
 import React from "react";
 import App from './app'
@@ -38,7 +38,7 @@ app.model(require('./models/global').default);
 app.router(RouterConfig);
 
 // 5. Start
-app.start('#app')
+app.start('#root')
 
 function RouterConfig({ history, app }) {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import {Layout, Spin} from 'antd';
 import SiderMenu from '../components/SiderMenu'
 import { Route, Switch, Redirect } from 'dva/router';
-import GlobalHeader from '../components/GlobalHeader'
+// import GlobalHeader from '../components/GlobalHeader'
 import { connect } from 'dva';
 import logo from 'assets/logo/ant-logo.svg'
 import { getMenuData } from '../common/menu';
@@ -10,6 +10,8 @@ import basicRoute from '../common/routerConfig'
 import NotFound from '../routes/Exception/404';
 import Authorized from '../utils/Authorized';
 import 'acom/theme/ag-grid-theme.scss'
+import echarts from "echarts";
+import walden from "assets/json/walden.json";
 const { Content, Header } = Layout;
 const { AuthorizedRoute } = Authorized;
 
@@ -59,6 +61,8 @@ class BasicLayout extends React.PureComponent {
   componentDidMount () {
     const { dispatch } = this.props;
     dispatch({type: 'user/fetchCurrent'})
+    echarts.registerTheme('walden', walden);
+
   }
 
   render () {
@@ -85,14 +89,14 @@ class BasicLayout extends React.PureComponent {
         />
         <Layout>
           <Header style={{ padding: 0 }}>
-            <GlobalHeader
-              collapsed={collapsed}
-              location={location}
-              routerData={routerData}
-              onCollapse={this.handleMenuCollapse}
-              currentUser={user}
-              onMenuClick={this.handleMenuClick}
-            />
+            {/*<GlobalHeader*/}
+              {/*collapsed={collapsed}*/}
+              {/*location={location}*/}
+              {/*routerData={routerData}*/}
+              {/*onCollapse={this.handleMenuCollapse}*/}
+              {/*currentUser={user}*/}
+              {/*onMenuClick={this.handleMenuClick}*/}
+            {/*/>*/}
           </Header>
           {user.username ?
             <Content style={{ margin: '12px', height: '100%' }}>

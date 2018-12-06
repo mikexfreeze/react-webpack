@@ -8,9 +8,6 @@ import {layout, login} from "./common/routerConfig";
 
 import { LocaleProvider } from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
-// import 'moment/locale/zh-cn';
-// import walden from 'assets/json/walden';
-// import echarts from 'echarts';
 
 const { ConnectedRouter } = routerRedux;
 /**
@@ -41,10 +38,6 @@ function getLocale(lang) {
   lang: global.lang,
 }))
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // echarts.registerTheme('walden', walden);
-  }
 
   render () {
     const BasicLayout = getRouter(this.props.app, layout).component;

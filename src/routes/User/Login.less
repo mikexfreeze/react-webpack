@@ -1,19 +1,55 @@
 @import '~antd/lib/style/themes/default.less';
 
+.layout{
+  position: absolute !important;
+  top: 0;right: 0;bottom:0;left: 0;
+  background-color: #53565D;
+}
+
+
+
 .main {
-  width: 400px;
+  width: 480px;
   margin: 200px auto;
+  z-index: 2;
   @media screen and (max-width: @screen-sm) {
     width: 95%;
   }
 
-  .login-form-forgot {
-    float: right;
+  .title{
+    text-align: center;
   }
 
-  .login-form-button {
-    width: 100%;
+  .logoIcon{
+    font-size: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    color: @primary-color;
+    margin-right: 5px;
   }
+
+  .logoText{
+    font-size: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    color: @primary-color;
+    //color: #000000;
+  }
+
+  .loginForm{
+    :global{
+      .ant-input-group-addon{
+        //background-color: @primary-color;
+        padding: 0 7px;
+      }
+      .login-form-button {
+        width: 100%;
+      }
+    }
+
+  }
+
+
 
   .icon {
     font-size: 24px;
@@ -41,13 +77,14 @@
 
 .verifCon {
   width: 100px;
-  height: 45px;
-  background-size: 124px 50px;
+  height: 40px;
+  background-size: 155px 90px;
+  background-position: 0 5px;
   border-radius: 5px;
 }
 
 .reload{
-  line-height: 38px;
+  line-height: 40px;
   width: 35px;
   padding-left: 12px;
   font-size: 20px;
