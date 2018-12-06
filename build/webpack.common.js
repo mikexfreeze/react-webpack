@@ -6,14 +6,26 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack')
 const config = require('../config')
 
+
 module.exports = {
-  entry: {
-    app: './src/index.js'
-  },
+  entry: ["babel-polyfill", "./src/index.js"],
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
     path: config.dist
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
+    alias: {
+      components: path.resolve(__dirname, '../src/components/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+      index: path.resolve(__dirname, '../src/index'),
+      fetch: path.resolve(__dirname, '../src/utils/fetch'),
+      assets: path.resolve(__dirname, '../src/assets'),
+      acom: path.resolve(__dirname, '../src/acom'),
+      services: path.resolve(__dirname, '../src/services'),
+      routes: path.resolve(__dirname, '../src/routes'),
+    }
   },
   module: {
     rules: [
@@ -67,19 +79,7 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx', 'json'],
-    alias: {
-      components: path.resolve(__dirname, '../src/components/'),
-      utils: path.resolve(__dirname, '../src/utils/'),
-      index: path.resolve(__dirname, '../src/index'),
-      fetch: path.resolve(__dirname, '../src/utils/fetch'),
-      assets: path.resolve(__dirname, '../src/assets'),
-      acom: path.resolve(__dirname, '../src/acom'),
-      services: path.resolve(__dirname, '../src/services'),
-      routes: path.resolve(__dirname, '../src/routes'),
-    }
-  },
+
   optimization: {
     splitChunks: { // 代码模块拆分
       chunks: 'all',
