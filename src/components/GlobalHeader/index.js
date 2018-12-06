@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import {Menu, Icon, Dropdown, Spin, message} from 'antd';
+import {Menu, Icon, Dropdown, Spin, message,} from 'antd';
 import Debounce from 'lodash-decorators/debounce';
 // import NoticeIcon from '../NoticeIcon';
 // import HeaderSearch from '../HeaderSearch';
@@ -9,7 +9,8 @@ import {loadScript} from "utils/utils";
 import ColorPicker from 'acom/Color/ColorPicker';
 import { injectIntl } from 'react-intl'
 import pathToRegexp from 'path-to-regexp';
-import { IconFont } from "components";
+import IconFont from "../Icon/IconFont";
+
 function matchRoute(routerData, location) {
   for (let router of routerData.values()) {
     if(pathToRegexp(router.path).test(location.pathname)){
