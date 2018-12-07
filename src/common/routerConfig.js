@@ -23,6 +23,11 @@ const basicRoute = [
           {name: <Fm id="specification.common.specificationDetail" defaultMessage="规格详情" /> , path:'/detail/:id/:tenantId', hide: true, component: () => import(/* webpackChunkName: "EndpointSpecDetail" */'routes/Endpoint/EndpointSpec/EndpointSpecDetail'), models: ['endpointSpec', 'command']},
           {name: <Fm id="specification.common.editspecification" defaultMessage="编辑规格" />, path:'/edit/:id/:tenantId', exact: true, hide: true, component: () => import(/* webpackChunkName: "EndpointSpecEditor" */'routes/Endpoint/EndpointSpec/EndpointSpecEditor'), models: ['endpointSpec', 'endpointCategory']},
         ]
+      },{name: <Fm id="sidebar.nav.deviceJoin.endpoint" defaultMessage="终端" />, authority: "M_DEV_MGT_ENDPOINT", path: '/endpoint-list', exact: true, component: () => import('../routes/Endpoint/Endpoint/Endpoint'), models: ['specifications', 'projects', 'tenants', 'accts'],
+        children: [
+          {name: <Fm id="endpoint.common.endpointdetail" defaultMessage="终端详情" />, path:'/detail/:id/:tenantId', hide: true, component: () => import('routes/Endpoint/Endpoint/EndpointDetail'), models: ['endpoint']},
+          {name: <Fm id="endpoint.common.editendpoint" defaultMessage="终端编辑" />, path:'/edit/:id/:tenantId', exact: true, hide: true, component: () => import('routes/Endpoint/Endpoint/EndpointEditor'), models: ['specifications', 'projects'],},
+        ]
       },
     ]
   },{

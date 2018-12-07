@@ -98,6 +98,10 @@ module.exports = {
           test: /ag-grid-community/,
           name: 'ag-grid'
         },
+        echarts: {
+          test: /echarts/,
+          name: 'echarts'
+        },
         default: {
           minChunks: 2,
           priority: -20,
