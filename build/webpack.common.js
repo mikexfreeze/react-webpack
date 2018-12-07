@@ -93,6 +93,9 @@ module.exports = {
     new CopyWebpackPlugin([ // copy public 文件夹至 dist
       {from: 'src/public', to: ''}
     ]),
+    new webpack.ProvidePlugin({
+      React: "react", // React 设为全局变量
+    }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/), // 忽略moment.js中的locals文件，需要时单独引入
   ],
 
