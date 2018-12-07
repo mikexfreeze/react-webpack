@@ -83,6 +83,27 @@ module.exports = {
   optimization: {
     splitChunks: { // 代码模块拆分
       chunks: 'all',
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        agGrid: {
+          test: /ag-grid-community/,
+          name: 'ag-grid'
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
     },
   },
   plugins: [
